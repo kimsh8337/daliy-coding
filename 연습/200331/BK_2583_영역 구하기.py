@@ -1,4 +1,5 @@
 import sys
+sys.setrecursionlimit(100000)
 sys.stdin = open('input.txt', 'r')
 
 dr=[1,0,-1,0]
