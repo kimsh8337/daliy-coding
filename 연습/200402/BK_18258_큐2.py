@@ -1,6 +1,7 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
+# 시간초과
 queue = []
 for _ in range(int(input())):
     a = list(input().split())
