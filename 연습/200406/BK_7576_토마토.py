@@ -1,43 +1,31 @@
 import sys
 sys.stdin = open('input.txt')
-from collections import deque
-r = sys.stdin.readline
-
-
-def bfs(M, N, box):
-    # 좌우상하
-    dx = [0, 0, 1, -1]
-    dy = [-1, 1, 0, 0]
-
-    days = -1
-
-    while ripe:
-        days += 1
-        for _ in range(len(ripe)):
-            x, y = ripe.popleft()
-
-            for i in range(4):
-                nx = x + dx[i]
-                ny = y + dy[i]
-
-                if (0 <= nx < N) and (0 <= ny < M) and (box[nx][ny] == 0):
-                    box[nx][ny] = box[x][y] + 1
-                    ripe.append([nx, ny])
-
-    for b in box:
-        if 0 in b:
+from _collections import deque
+nd = [(0,1),(0,-1),(1,0),(-1,0)]
+def BFS():
+    global ans
+    while q:
+        r,c,k = q.popleft()
+        for d in range(4):
+            nr = r + nd[d][0]
+            nc = c + nd[d][1]
+            if 0<=nr<N and 0<=nc<M and tomato[nr][nc]==0 and not check[nr][nc]:
+                tomato[nr][nc] = check[nr][nc] = 1
+                q.append((nr,nc,k+1))
+                ans = k+1
+    for i in tomato:
+        if 0 in i:
             return -1
-    return days
-
-
-M, N = map(int, r().split())
-box, ripe = [], deque()
+    else:
+        return ans
+M,N = map(int,input().split())
+tomato = [list(map(int,input().split())) for _ in range(N)]
+check = [[0]*M for _ in range(N)]
+ans = 0
+q = deque()
 for i in range(N):
-    row = list(map(int, r().split()))
     for j in range(M):
-        if row[j] == 1:
-            ripe.append([i, j])
-    box.append(row)
+        if tomato[i][j]==1:
+            q.append((i,j,0))
 
-
-print(bfs(M, N, box))
+print(BFS())
