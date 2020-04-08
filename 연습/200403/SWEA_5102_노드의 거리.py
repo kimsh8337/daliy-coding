@@ -1,4 +1,4 @@
-import sys;
+import sys
 from _collections import deque
 sys.stdin = open('input.txt','r')
 

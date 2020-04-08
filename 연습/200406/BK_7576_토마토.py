@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt')
+sys.stdin = open('input.txt','r')
 from _collections import deque
 nd = [(0,1),(0,-1),(1,0),(-1,0)]
 def BFS():
