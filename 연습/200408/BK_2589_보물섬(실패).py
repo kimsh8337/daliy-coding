@@ -28,4 +28,5 @@ for i in range(h):
     for j in range(w):
         if arr[i][j] == 'L':
             q.append((i,j,0))
+            visited[i][j] = 1
 print(bfs())
