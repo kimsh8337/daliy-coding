@@ -1,8 +1,8 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
-def backtrack(i = 0, cnt = 0):
-    if cnt == m:
+def backtrack(i = 0):
+    if i == m:
         for j in range(m):
             print(out[j], end = ' ')
         print()
@@ -10,7 +10,7 @@ def backtrack(i = 0, cnt = 0):
 
     for j in range(n):
         out.append(nums[j])
-        backtrack(j,cnt + 1)
+        backtrack(i + 1)
         out.pop()
 
 n,m = map(int,input().split())
