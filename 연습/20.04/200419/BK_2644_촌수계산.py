@@ -5,7 +5,7 @@ from _collections import deque
 def bfs(start):
     q=deque()
     q.append(start)
-    visit = [0 for i in range(n+1)]
+    visit = [0 for _ in range(n+1)]
     visit[start] = 1
     while q:
         d = q.popleft()
