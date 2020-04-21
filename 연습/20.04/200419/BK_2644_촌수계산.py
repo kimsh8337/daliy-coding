@@ -24,7 +24,7 @@ for i in range(m):
     x,y = map(int, input().split())
     s[x].append(y)
     s[y].append(x)
-print(s)
+# print(s)
 bfs(a)
 
 # print(result[b] if result[b] != 0 else -1)
