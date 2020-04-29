@@ -36,4 +36,3 @@ for i in range(n):
             q.append((i, j, 0))
             visited[i][j] = 1
 print(bfs())
-
