@@ -3,12 +3,9 @@ sys.stdin = open('input.txt', 'r')
 
 def dfs(i=0,sum=0):
     global max_p
-    if max_p > sum:
-        return
-
-    if i >= n or i+arr[i][0] > n:
-        if max_p < sum:
-            max_p = sum
+    if max_p < sum:
+        max_p = sum
+    if i >= n:
         return
     else:
         for j in range(i,n):
