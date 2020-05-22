@@ -31,3 +31,35 @@ for tc in range(1, 1+int(input())):
         result.append(find_set(i))
 
     print('#{} {}'.format(tc, len(set(result))-1))
+
+
+# bfs
+# from collections import deque
+#
+# def BFS(n):
+#     q = deque([n])
+#     check[n] = 1
+#     while q:
+#         n = q.popleft()
+#         for v in G[n]:
+#             if not check[v]:
+#                 check[v] = 1
+#                 q.append(v)
+#
+# for tc in range(1,int(input())+1):
+#     N,M = map(int,input().split())
+#     G = [[] for _ in range(N+1)]
+#     arr = list(map(int,input().split()))
+#     for i in range(0,M*2,2):
+#         G[arr[i]].append(arr[i+1])
+#         G[arr[i+1]].append(arr[i])
+#     check = [0] * (N+1);group = 0
+#     for j in range(1,N+1):
+#         if not check[j]:
+#             if not G[j]:
+#                 group += 1
+#                 check[j] = 1
+#             else:
+#                 group += 1
+#                 BFS(j)
+#     print("#{} {}".format(tc,group))
