@@ -33,6 +33,7 @@ D = [[0]*(n+1) for _ in range(n+1)]
 for i in range(m):
     D[arr[i][0]][arr[i][1]] = 1
     D[arr[i][1]][arr[i][0]] = 1
+
 visit_d = [0]*(n+1)
 res_d = [v]
 dfs(v)
