@@ -2,6 +2,7 @@ import sys
 sys.stdin = open('input1260.txt', 'r')
 from _collections import deque
 
+
 def dfs(v):
     if not visit_d[v]:
         visit_d[v] = 1
@@ -10,6 +11,7 @@ def dfs(v):
                 res_d.append(i)
                 dfs(i)
         return
+
 
 def bfs():
     Q = deque()
@@ -24,6 +26,7 @@ def bfs():
             if D[q][i] == 1 and not visit_b[i]:
                 visit_b[i] = 1
                 Q.append(i)
+
 
 n, m ,v = map(int, input().split())
 arr = [list(map(int, input().split())) for _ in range(m)]
