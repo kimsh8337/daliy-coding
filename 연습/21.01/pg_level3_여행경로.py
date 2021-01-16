@@ -1,7 +1,7 @@
 # tickets = [["ICN", "SFO"], ["ICN", "ATL"], ["SFO", "ATL"], ["ATL", "ICN"], ["ATL", "SFO"]]
 # tickets = [["ICN","AAA"], ["ICN","BBB"], ["BBB","ICN"]]
 # tickets = [["ICN", "A"], ["A", "B"], ["B", "A"], ["A", "ICN"], ["ICN", "A"]]
-tickets = [["ICN", "A"], ["ICN", "A"], ["A", "ICN"]]
+tickets = [["ICN", "A"],["ICN", "A"],["ICN", "A"],["A", "ICN"],["A", "ICN"]]
 
 from collections import deque
 
@@ -11,7 +11,6 @@ def solution(tickets):
     visited = [0] * len(tickets)
     new = []
     Q = deque()
-
 
     for i in range(len(tickets)):
         if tickets[i][0] == "ICN":
@@ -61,6 +60,6 @@ def solution(tickets):
                             if check[k] == tickets[j][1] and tickets[j][0] == ed:
                                 Q.append((tickets[j][0], tickets[j][1]))
 
-
     return answer
+
 print(solution(tickets))
