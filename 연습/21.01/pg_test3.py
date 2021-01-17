@@ -32,7 +32,6 @@ def solution(board):
 
     for i in range(len(board)):
         for j in range(len(board)):
-            # visited = [[0] * len(board) for _ in range(len(board))]
             check(i,j)
 
     if answer == 0:
