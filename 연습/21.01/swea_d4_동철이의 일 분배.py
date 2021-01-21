@@ -22,7 +22,7 @@ def check(idx, value):
     return
 
 for tc in range(1, int(input())+1):
-    n = int(input())
+ d   n = int(input())
     persons = [list(map(int, input().split())) for _ in range(n)]
     visited = [0] * n
     ans = -float('inf')
