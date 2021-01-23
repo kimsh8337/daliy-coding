@@ -1,4 +1,5 @@
 import sys
+import copy
 sys.stdin = open('input.txt', 'r')
 sys.setrecursionlimit(10**5)
 
@@ -31,13 +32,13 @@ n, m = map(int, sys.stdin.readline().split())
 iceberg = [list(map(int, sys.stdin.readline().split())) for _ in range(n)]
 cnt = 0
 year = 0
-num = [1,2,3,4,5,6,7,8,9,10]
 
-clone = [[0]*m for _ in range(n)]
+# clone = [[0]*m for _ in range(n)]
 
-for i in range(n):
-    for j in range(m):
-        clone[i][j] = iceberg[i][j]
+# for i in range(n):
+#     for j in range(m):
+#         clone[i][j] = iceberg[i][j]
+clone = copy.deepcopy(iceberg)
 
 while cnt <= 2:
     visited = [[0] * m for _ in range(n)]
