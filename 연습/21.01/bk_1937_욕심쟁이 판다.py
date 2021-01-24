@@ -29,4 +29,3 @@ for i in range(n):
     for j in range(n):
         day = max(day,DFS(i,j))
 print(day)
-
