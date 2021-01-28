@@ -1,8 +1,6 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
-import sys
-
 #입력
 N, M = map(int, input().split())
 height = [[0 for _ in range(N+1)] for _ in range(N+1)]
