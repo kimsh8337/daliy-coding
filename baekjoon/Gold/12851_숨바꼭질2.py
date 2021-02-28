@@ -5,37 +5,37 @@ input = sys.stdin.readline
 from collections import deque
 
 def bfs():
-    global cnt, min_time
+    global cnt
 
     q = deque()
     q.append((N,0))
-    visited[N] = 1
 
     while q:
         now, time = q.popleft()
-
-        if min_time >= time:
-            if now == K:
-                if min_time >= time:
-                    min_time = time
+        if now == K:
+            if not visited[now]:
+                visited[now] = time
+                cnt += 1
+            else:
+                if time == visited[now]:
                     cnt += 1
 
-            if not visited[now+1] and min_time >= time:
-                visited[now+1] = 1
-                q.append((now+1,time+1))
-            if not visited[now-1] and min_time >= time:
-                visited[now - 1] = 1
-                q.append((now-1,time+1))
-            if now*2 <= 1000000 and min_time >= time:
-                if not visited[now*2]:
-                    visited[now*2] = 1
-                    q.append((now*2,time+1))
+        for nxt in [now*2, now+1, now-1]:
+            if 0 <= nxt <= 1000000:
+                if not visited[nxt] or visited[nxt] >= time+1:
+                    if visited[K] and time+1 > visited[nxt]:
+                        continue
+                    visited[nxt] = time + 1
+                    q.append((nxt,time+1))
 
 
 N, K = map(int, input().split())
-visited = [0]*1000000
+visited = [0]*1000001
 cnt = 0
-min_time = float('inf')
-bfs()
-print(min_time)
-print(cnt)
+if N >= K:
+    print(N-K)
+    print(1)
+else:
+    bfs()
+    print(visited[K])
+    print(cnt)
