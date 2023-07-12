@@ -1,3 +1,8 @@
-# 파이썬 7일 수업
+# Solved Algorithms
 
-이 REPO는 파이썬 7일 과정을 담은 수업입니다.
+Daily Algorithms Coding
+
+- Beakjoon
+- Programmesrs
+- SWEA
+- JUNGOL
